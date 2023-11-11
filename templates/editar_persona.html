@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Persona</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Editar Persona</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" name="nombre" value="{{ persona[1] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" class="form-control" name="apellido" value="{{ persona[2] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" class="form-control" name="correo" value="{{ persona[3] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" class="form-control" name="contrasena" value="{{ persona[4] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" class="form-control" name="telefono" value="{{ persona[5] }}" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div>
+</body>
+</html>

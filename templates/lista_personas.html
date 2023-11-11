@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Personas</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Lista de Personas</h1>
+        <ul class="list-group">
+            {% for persona in personas %}
+                <li class="list-group-item">
+                    {{ persona[1] }} {{ persona[2] }}
+                    <a href="{{ url_for('editar_persona', id=persona[0]) }}" class="btn btn-warning btn-sm float-right">Editar</a>
+                    <form method="POST" action="{{ url_for('eliminar_persona', id=persona[0]) }}" style="display: inline;">
+                        <button type="submit" class="btn btn-danger btn-sm float-right">Eliminar</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/agregar_persona" class="btn btn-primary mt-4">Agregar Persona</a>
+    </div>
+</body>
+</html>
